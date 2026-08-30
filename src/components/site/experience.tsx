@@ -1,5 +1,6 @@
 import { contact } from "@/lib/site";
 import { Reveal } from "@/components/site/reveal";
+import { ParallaxImage } from "@/components/site/parallax-image";
 
 const points = [
   {
@@ -73,14 +74,13 @@ export function Experience() {
 
         {/* Image collage */}
         <Reveal delay={0.1} className="relative">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[14px]">
-            <img
-              src="https://picsum.photos/seed/amroom/900/1100"
-              alt="A calm treatment room at A&M Health Clinic"
-              loading="lazy"
-              className="photo-grade h-full w-full object-cover"
-            />
-          </div>
+          <ParallaxImage
+            src="https://picsum.photos/seed/amroom/900/1100"
+            alt="A calm treatment room at A&M Health Clinic"
+            className="aspect-[4/5] rounded-[14px]"
+            imgClassName="photo-grade"
+            amount={14}
+          />
           <div className="absolute -bottom-8 -left-6 hidden w-2/5 overflow-hidden rounded-[14px] border-4 border-bone sm:block">
             <img
               src="https://picsum.photos/seed/amdetail/600/600"

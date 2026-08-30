@@ -1,6 +1,7 @@
 import { SiteNav } from "@/components/site/nav";
 import { Hero } from "@/components/site/hero";
 import { Services } from "@/components/site/services";
+import { Marquee } from "@/components/site/marquee";
 import { Experience } from "@/components/site/experience";
 import { Pricing } from "@/components/site/pricing";
 import { Faq } from "@/components/site/faq";
@@ -17,6 +18,7 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
+        <Marquee />
         <Experience />
         <Pricing />
         <Faq />

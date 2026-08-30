@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { Phone, ArrowDown, Clock, MapPin } from "lucide-react";
 
 import { contact } from "@/lib/site";
+import { HeroBackdrop } from "@/components/site/hero-backdrop";
 
 export function Hero() {
   const reduce = useReducedMotion();
@@ -13,19 +14,8 @@ export function Hero() {
       id="top"
       className="relative flex min-h-[100dvh] flex-col justify-end overflow-hidden"
     >
-      {/* Background image */}
-      <div className="absolute inset-0 -z-20">
-        <motion.img
-          src="https://picsum.photos/seed/amclinichero/1920/1280"
-          alt=""
-          aria-hidden
-          fetchPriority="high"
-          className="photo-grade h-full w-full object-cover object-center"
-          initial={reduce ? undefined : { scale: 1.12 }}
-          animate={reduce ? undefined : { scale: 1 }}
-          transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
-        />
-      </div>
+      {/* Background image (GSAP: intro settle + scroll parallax) */}
+      <HeroBackdrop />
       {/* Cinematic washes for legibility */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ground via-ground/70 to-ground/30" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-ground/85 via-ground/40 to-transparent" />
