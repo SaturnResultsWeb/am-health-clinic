@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-30T00:00:00Z",
+  "title": "Design System: A&M Health Clinic",
+  "extensions": {
+    "colorMeta": {
+      "sage": {
+        "role": "primary",
+        "displayName": "Clinic Sage",
+        "canonical": "oklch(0.44 0.038 120)",
+        "tonalRamp": ["#101109", "#1C1E12", "#2C2F1D", "#43462C", "#5F6243", "#7B7E5B", "#9EA080", "#CBCCB2"]
+      },
+      "sage-lift": {
+        "role": "primary",
+        "displayName": "Lifted Sage",
+        "canonical": "oklch(0.62 0.045 118)",
+        "tonalRamp": ["#14150D", "#232517", "#363A24", "#4E5233", "#6B6F49", "#8D9068", "#AEB08C", "#D2D3B8"]
+      },
+      "sand": {
+        "role": "secondary",
+        "displayName": "Warm Sand",
+        "canonical": "oklch(0.76 0.030 100)",
+        "tonalRamp": ["#1A1912", "#2C2B1F", "#403E2D", "#57543D", "#726E52", "#928D6C", "#B7B397", "#DAD7C4"]
+      },
+      "ground": {
+        "role": "neutral",
+        "displayName": "Room Charcoal",
+        "canonical": "oklch(0.17 0.012 120)",
+        "tonalRamp": ["#0B0C07", "#14160F", "#1B1E15", "#262A1D", "#353A29", "#4A5039", "#6B7154", "#9AA07E"]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "oklch(0.93 0.012 105)",
+        "tonalRamp": ["#2A2A22", "#3E3E33", "#57574A", "#727263", "#909082", "#B3B3A6", "#D2D1C6", "#EAE9DF"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.24 0.015 120)",
+        "tonalRamp": ["#0E0F09", "#171911", "#20241A", "#2E3325", "#414734", "#5A6149", "#7D8467", "#A9B090"]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Cream",
+        "canonical": "oklch(0.94 0.010 105)",
+        "tonalRamp": ["#2B2B23", "#3F3F34", "#58584B", "#737365", "#919184", "#B4B4A8", "#D3D2C8", "#EDECE2"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only; Fraunces, optical sizing on." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles; Fraunces." },
+      "title": { "displayName": "Title", "purpose": "Service and card names; Fraunces 500." },
+      "body": { "displayName": "Body", "purpose": "Paragraphs; Hanken Grotesk, measure 65-70ch." },
+      "label": { "displayName": "Label", "purpose": "Sand small-caps kickers above sections." }
+    },
+    "shadows": [
+      { "name": "subtle-lift", "value": "0 1px 2px rgba(20,22,15,0.25)", "purpose": "Hairline separation on hover." },
+      { "name": "card-float", "value": "0 8px 24px -12px rgba(20,22,15,0.45)", "purpose": "Raised image frames and service cards on hover." },
+      { "name": "deep-frame", "value": "0 24px 60px -28px rgba(20,22,15,0.6)", "purpose": "Hero and featured imagery." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default easing for all UI state transitions and reveals." },
+      { "name": "dur-ui", "value": "180ms", "purpose": "UI interactions (buttons, links, nav)." },
+      { "name": "dur-reveal", "value": "650ms", "purpose": "Scroll-in section reveals (opacity + clip-path)." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "375px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1440px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Dark)",
+      "kind": "button",
+      "refersTo": "button-primary-dark",
+      "description": "Primary CTA on charcoal sections; Lifted Sage fill with ground text.",
+      "html": "<button class=\"ds-btn-primary-dark\">Book a session</button>",
+      "css": ".ds-btn-primary-dark { background: #8D9068; color: #14160F; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 500; font-size: 1rem; padding: 0.9rem 1.75rem; border: none; border-radius: 4px; cursor: pointer; transition: background 180ms cubic-bezier(0.16,1,0.3,1), transform 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary-dark:hover { background: #9EA080; } .ds-btn-primary-dark:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(141,144,104,0.35); } .ds-btn-primary-dark:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Primary Button (Light)",
+      "kind": "button",
+      "refersTo": "button-primary-light",
+      "description": "Primary CTA on bone sections; Clinic Sage fill with cream text.",
+      "html": "<button class=\"ds-btn-primary-light\">Book a session</button>",
+      "css": ".ds-btn-primary-light { background: #5F6243; color: #EDECE2; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 500; font-size: 1rem; padding: 0.9rem 1.75rem; border: none; border-radius: 4px; cursor: pointer; transition: background 180ms cubic-bezier(0.16,1,0.3,1), transform 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary-light:hover { background: #6B6F49; } .ds-btn-primary-light:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(95,98,67,0.35); } .ds-btn-primary-light:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action; transparent with a sand border. Never a third button style.",
+      "html": "<button class=\"ds-btn-secondary\">View services</button>",
+      "css": ".ds-btn-secondary { background: transparent; color: #B7B397; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 500; font-size: 1rem; padding: 0.9rem 1.75rem; border: 1px solid #B7B397; border-radius: 4px; cursor: pointer; transition: background 180ms cubic-bezier(0.16,1,0.3,1), color 180ms cubic-bezier(0.16,1,0.3,1), transform 160ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-secondary:hover { background: rgba(183,179,151,0.1); } .ds-btn-secondary:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(183,179,151,0.3); } .ds-btn-secondary:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": "service-card",
+      "description": "Editorial tile: photograph, service name in Fraunces, tabular price, quiet Book link. Flat at rest, floats on hover.",
+      "html": "<article class=\"ds-service-card\"><div class=\"ds-service-media\"></div><div class=\"ds-service-body\"><h3 class=\"ds-service-name\">Deep Tissue Massage</h3><p class=\"ds-service-price\">from &pound;50</p><a class=\"ds-service-link\" href=\"#book\">Book<svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></a></div></article>",
+      "css": ".ds-service-card { background: #1B1E15; border: 1px solid #2C3021; border-radius: 14px; overflow: hidden; transition: box-shadow 250ms cubic-bezier(0.16,1,0.3,1), transform 250ms cubic-bezier(0.16,1,0.3,1); } .ds-service-card:hover { box-shadow: 0 8px 24px -12px rgba(20,22,15,0.45); transform: translateY(-2px); } .ds-service-media { aspect-ratio: 4/3; background: linear-gradient(135deg,#2C3021,#43462C); } .ds-service-body { padding: 2rem; } .ds-service-name { font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 1.5rem; color: #EDECE2; margin: 0 0 0.5rem; } .ds-service-price { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-variant-numeric: tabular-nums; color: #9DA089; margin: 0 0 1.25rem; } .ds-service-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 500; color: #B7B397; text-decoration: none; } .ds-service-link svg { transition: transform 180ms cubic-bezier(0.16,1,0.3,1); } .ds-service-card:hover .ds-service-link svg { transform: translateX(3px); }"
+    },
+    {
+      "name": "Price Menu Row",
+      "kind": "custom",
+      "refersTo": "service-card",
+      "description": "Restaurant-menu price row: name left, tabular price right, sand hairline rule. No offer banners.",
+      "html": "<div class=\"ds-price-row\"><span class=\"ds-price-name\">Relaxing Massage &middot; 60 min</span><span class=\"ds-price-value\">&pound;70</span></div>",
+      "css": ".ds-price-row { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; padding: 0.9rem 0; border-bottom: 1px solid rgba(183,179,151,0.3); font-family: 'Hanken Grotesk', system-ui, sans-serif; color: #EDECE2; } .ds-price-name { font-size: 1.0625rem; } .ds-price-value { font-variant-numeric: tabular-nums; font-weight: 600; color: #B7B397; }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Transparent field, 1px line, label above, sage focus ring.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">Full name</span><input class=\"ds-input\" type=\"text\" placeholder=\"Your name\" /></label>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 0.4rem; } .ds-field-label { font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 0.875rem; color: #9DA089; } .ds-input { background: transparent; color: #EDECE2; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-size: 1.0625rem; padding: 0.75rem 1rem; border: 1px solid #2C3021; border-radius: 4px; transition: border-color 180ms cubic-bezier(0.16,1,0.3,1), box-shadow 180ms cubic-bezier(0.16,1,0.3,1); } .ds-input::placeholder { color: #6B7154; } .ds-input:focus-visible { outline: none; border-color: #8D9068; box-shadow: 0 0 0 3px rgba(141,144,104,0.25); }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "button-secondary",
+      "description": "Minimal nav link, cream default, sand underline on hover, cream active.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#services\">Services</a><a class=\"ds-nav-link ds-nav-active\" href=\"#book\">Book</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 2rem; } .ds-nav-link { position: relative; font-family: 'Hanken Grotesk', system-ui, sans-serif; font-weight: 500; color: #EDECE2; text-decoration: none; padding-bottom: 2px; } .ds-nav-link::after { content: ''; position: absolute; left: 0; bottom: 0; height: 1px; width: 0; background: #B7B397; transition: width 180ms cubic-bezier(0.16,1,0.3,1); } .ds-nav-link:hover::after, .ds-nav-active::after { width: 100%; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Treatment Room",
+    "overview": "The whole system is the feeling of stepping into a warm, low-lit treatment room after a hard day in central London: linen, oil, quiet, and skilled hands. It is dark-first and cinematic, a warm near-black ground that lets the clinic's real sage green read as premium, with light treatment-room interludes for warmth. The register is brand, so feel outranks density. Underneath the calm sits quiet expertise, carried through restraint rather than noise: concrete prices and services over superlatives, discretion over display. The colour is committed: sage carries the identity on charcoal, with a single warm sand accent.",
+    "keyCharacteristics": [
+      "Dark-first, cinematic ground with warm light interludes",
+      "Committed sage-green identity on tinted charcoal, one sand accent",
+      "Editorial serif (Fraunces) over clean humanist sans (Hanken Grotesk)",
+      "Generous, varied spacing; low density; one idea per screen",
+      "Legitimacy and discretion above all; calm as the deliverable"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Sand is the only accent, used on kickers, hairlines, and secondary borders, never as a fill or as body text on dark. Its scarcity keeps the sage identity dominant.", "section": "colors" },
+      { "name": "The No-Pure-Black Rule", "body": "Never #000 or #fff. Every neutral tints toward sage. If a value looks flatly grey, it is wrong.", "section": "colors" },
+      { "name": "The Two-Line Headline Rule", "body": "The hero headline never exceeds three lines. Widen the container and reduce size before letting it wrap to four.", "section": "typography" },
+      { "name": "The Serif-Sans Divide Rule", "body": "Fraunces is for display and names only; Hanken carries all body, UI, and labels. Never set body copy in the serif. Inter and default Poppins are prohibited.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Surfaces are flat at rest. Shadow appears only as a response to state (hover, focus) or to lift photography off the ground, never as decoration.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep the committed sage identity (#5F6243 / #8D9068) grounded on warm charcoal (#14160F), with warm bone (#EAE9DF) light interludes.",
+      "Do set display and names in Fraunces, everything else in Hanken Grotesk.",
+      "Do use real prices, services, testimonials (Sam, Daren, Angela, Jakie, David), address, and hours. Concrete over boastful.",
+      "Do keep one quiet, ever-present path to booking, especially the mobile phone/Book action.",
+      "Do give sections big, varied vertical breathing room (clamp(5rem, 12vh, 10rem)).",
+      "Do keep motion ease-out and under 250ms for UI; honour prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't go clinical and cold, no harsh whites, medical stiffness, or stock doctor imagery.",
+      "Don't read as a cheap massage parlour, no neon, seedy, suggestive, or bargain-bin cues.",
+      "Don't use the busy spa cliche, no pink/lavender, lotus flowers, hot-stone stock, or cluttered discount banners.",
+      "Don't look corporate or templated like the site this replaces, no SaaS or website-builder feel.",
+      "Don't reproduce the old site's fake 0+ awards / 0+ clients counters or its leftover Ginkgo Health Clinic template copy.",
+      "Don't use pure #000/#fff, gradient text, background-clip:text, side-stripe (border-left) accent cards, nested cards, or emojis as icons.",
+      "Don't set sand as body text on dark, or let the hero headline wrap past three lines."
+    ]
+  }
+}
