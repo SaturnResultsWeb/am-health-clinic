@@ -25,11 +25,16 @@ export function Pricing() {
               </p>
             </Reveal>
             <Reveal delay={0.15}>
+              {/* OPTION D — left-to-right fill */}
               <a
                 href={contact.phoneHref}
-                className="inline-flex items-center justify-center gap-2.5 rounded-[4px] border border-sand/60 px-6 py-3.5 text-base font-medium text-sand transition-[color,background-color,border-color,transform] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-sand hover:bg-sand/10 active:translate-y-0 active:scale-[0.97] mt-8"
+                className="group relative mt-8 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-[4px] border border-sand/60 px-6 py-3.5 text-base font-medium text-sand transition-[color,border-color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-sand hover:text-ground active:translate-y-0 active:scale-[0.97]"
               >
-                Call {contact.phoneDisplay}
+                <span
+                  aria-hidden
+                  className="absolute inset-0 z-0 -translate-x-full bg-sand transition-transform duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-0"
+                />
+                <span className="relative z-10">Call {contact.phoneDisplay}</span>
               </a>
             </Reveal>
           </div>

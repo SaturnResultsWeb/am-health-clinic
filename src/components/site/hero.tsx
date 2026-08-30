@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import { Phone, ArrowDown, Clock, MapPin } from "lucide-react";
+import { Phone, ArrowDown, ArrowUpRight, Clock, MapPin } from "lucide-react";
 
 import { contact } from "@/lib/site";
 import { HeroBackdrop } from "@/components/site/hero-backdrop";
@@ -55,21 +55,34 @@ export function Hero() {
           animate={reduce ? undefined : { opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.42 }}
         >
+          {/* OPTION A — sweep-up fill */}
           <a
             href={contact.phoneHref}
-            className="group inline-flex items-center justify-center gap-3 rounded-[4px] bg-cream px-7 py-4 text-base font-medium text-ground shadow-[0_1px_2px_rgba(20,22,15,0.25)] transition-[background-color,transform,box-shadow] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:bg-[#f7f6f0] hover:shadow-[0_16px_34px_-18px_rgba(20,22,15,0.65)] active:translate-y-0 active:scale-[0.97]"
+            className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-[4px] bg-cream px-7 py-4 text-base font-medium text-ground shadow-[0_1px_2px_rgba(20,22,15,0.25)] transition-[transform,box-shadow,color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:text-cream hover:shadow-[0_16px_34px_-18px_rgba(20,22,15,0.65)] active:translate-y-0 active:scale-[0.97]"
           >
-            <Phone
-              className="h-4.5 w-4.5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-              strokeWidth={1.75}
+            <span
+              aria-hidden
+              className="absolute inset-0 z-0 translate-y-full bg-sage transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0"
             />
-            Call to book · {contact.phoneDisplay}
+            <span className="relative z-10 inline-flex items-center gap-3">
+              <Phone className="h-4.5 w-4.5" strokeWidth={1.75} />
+              Call to book · {contact.phoneDisplay}
+            </span>
           </a>
+          {/* OPTION B — label roll */}
           <a
             href="#services"
-            className="group inline-flex items-center justify-center gap-2 rounded-[4px] border border-sand/60 px-7 py-4 text-base font-medium text-sand transition-[color,background-color,border-color,transform] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-sand hover:bg-sand/10 active:translate-y-0 active:scale-[0.97]"
+            className="group relative inline-flex items-center justify-center rounded-[4px] border border-sand/60 px-7 py-4 text-base font-medium text-sand transition-[border-color,background-color,transform] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:border-sand hover:bg-sand/10 active:translate-y-0 active:scale-[0.97]"
           >
-            View services
+            <span className="relative flex h-6 items-center justify-center overflow-hidden">
+              <span className="flex items-center transition-transform duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[150%]">
+                View services
+              </span>
+              <span className="absolute inset-0 flex translate-y-[150%] items-center justify-center gap-1.5 whitespace-nowrap transition-transform duration-[400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0">
+                View services
+                <ArrowUpRight className="h-4 w-4" strokeWidth={1.75} />
+              </span>
+            </span>
           </a>
         </motion.div>
 

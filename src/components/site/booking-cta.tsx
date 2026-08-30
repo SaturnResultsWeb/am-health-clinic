@@ -23,15 +23,19 @@ export function BookingCta() {
               and there&rsquo;s usually a slot sooner than you&rsquo;d think.
             </p>
             <div className="flex flex-col items-center gap-4 sm:flex-row">
+              {/* OPTION C — shine sweep */}
               <a
                 href={contact.phoneHref}
-                className="group inline-flex items-center justify-center gap-3 rounded-[4px] bg-cream px-8 py-4 text-lg font-medium text-ground shadow-[0_1px_2px_rgba(20,22,15,0.25)] transition-[background-color,transform,box-shadow] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:bg-[#f7f6f0] hover:shadow-[0_18px_38px_-18px_rgba(20,22,15,0.7)] active:translate-y-0 active:scale-[0.97]"
+                className="group relative inline-flex items-center justify-center gap-3 overflow-hidden rounded-[4px] bg-cream px-8 py-4 text-lg font-medium text-ground shadow-[0_1px_2px_rgba(20,22,15,0.25)] transition-[background-color,transform,box-shadow] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5 hover:bg-[#f7f6f0] hover:shadow-[0_18px_38px_-18px_rgba(20,22,15,0.7)] active:translate-y-0 active:scale-[0.97]"
               >
-                <Phone
-                  className="h-5 w-5 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
-                  strokeWidth={1.75}
+                <span
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 -translate-x-[120%] -skew-x-12 bg-gradient-to-r from-transparent via-white/70 to-transparent transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-[120%]"
                 />
-                {contact.phoneDisplay}
+                <span className="relative z-10 inline-flex items-center gap-3">
+                  <Phone className="h-5 w-5" strokeWidth={1.75} />
+                  {contact.phoneDisplay}
+                </span>
               </a>
               <a
                 href={contact.emailHref}
