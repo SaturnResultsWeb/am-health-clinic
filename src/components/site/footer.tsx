@@ -1,10 +1,10 @@
 import { contact, hours, nav } from "@/lib/site";
-import { FooterBackdrop } from "@/components/site/footer-backdrop";
+import { FooterWater } from "@/components/site/footer-water";
 
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden border-t border-line-dark bg-ground pb-10 pt-[clamp(3.5rem,8vh,6rem)]">
-      <FooterBackdrop />
+      <FooterWater />
       <div className="relative z-10 mx-auto max-w-7xl px-5 sm:px-8">
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <div className="sm:col-span-2 lg:col-span-1">
