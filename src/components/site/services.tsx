@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { services, contact, type Service } from "@/lib/site";
 import { Reveal } from "@/components/site/reveal";
+import { TiltCard } from "@/components/site/tilt-card";
 
 function ServiceCard({
   service,
@@ -12,11 +13,10 @@ function ServiceCard({
   feature?: boolean;
 }) {
   return (
-    <a
+    <TiltCard
       href={contact.phoneHref}
-      className={cn(
-        "group relative flex h-full flex-col overflow-hidden rounded-[14px] border border-line-dark bg-surface transition-[transform,box-shadow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-[0_8px_24px_-12px_rgba(20,22,15,0.45)]",
-      )}
+      className="h-full"
+      innerClassName="flex h-full flex-col rounded-[14px] border border-line-dark bg-surface transition-shadow duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:shadow-[0_22px_48px_-22px_rgba(20,22,15,0.7)]"
     >
       <div
         className={cn(
@@ -70,7 +70,7 @@ function ServiceCard({
           />
         </span>
       </div>
-    </a>
+    </TiltCard>
   );
 }
 
