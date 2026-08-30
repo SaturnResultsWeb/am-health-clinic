@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  /* A&M brand palette — sage on warm charcoal, one sand accent */
+  --color-ground: #14160f;
+  --color-surface: #1b1e15;
+  --color-line-dark: #2c3021;
+  --color-bone: #eae9df;
+  --color-bone-2: #e0dfd2;
+  --color-line-light: #cfcebe;
+  --color-sage: #5f6243;
+  --color-sage-lift: #8d9068;
+  --color-sand: #b7b397;
+  --color-ink: #20241a;
+  --color-cream: #edece2;
+  --color-muted-dark: #9da089;
+
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-hanken), system-ui, sans-serif;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ground);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+  font-optical-sizing: auto;
+}
+
+/* Even out headline breaks; reduce orphans in prose */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+
+/* Visible keyboard focus on links (buttons carry their own ring) */
+a:focus-visible {
+  outline: 2px solid var(--color-sage-lift);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-sage-lift) 45%, transparent);
+  color: var(--color-cream);
+}
+
+/* Sand small-caps kicker */
+.kicker {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-sand);
+}
+
+/* Organic SVG noise, recoloured to A&M ground (#14160F) */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 700 700'%3E%3Cdefs%3E%3Cfilter id='nnnoise-filter' x='-20%25' y='-20%25' width='140%25' height='140%25' filterUnits='objectBoundingBox' primitiveUnits='userSpaceOnUse' color-interpolation-filters='linearRGB'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.167' numOctaves='4' seed='15' stitchTiles='stitch' x='0%25' y='0%25' width='100%25' height='100%25' result='turbulence'%3E%3C/feTurbulence%3E%3CfeSpecularLighting surfaceScale='28' specularConstant='0.75' specularExponent='20' lighting-color='%23fff' x='0%25' y='0%25' width='100%25' height='100%25' in='turbulence' result='specularLighting'%3E%3CfeDistantLight azimuth='3' elevation='100'%3E%3C/feDistantLight%3E%3C/feSpecularLighting%3E%3C/filter%3E%3C/defs%3E%3Crect width='700' height='700' fill='%2314160F'%3E%3C/rect%3E%3Crect width='700' height='700' fill='%23ffffff' filter='url(%23nnnoise-filter)'%3E%3C/rect%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 500px 500px;
+}
+
+/* Fixed film-grain overlay, sits above everything, never intercepts clicks */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.04;
+  mix-blend-mode: overlay;
+}
+
+/* Filmic treatment for placeholder photography */
+.photo-grade {
+  filter: saturate(0.82) contrast(1.04) brightness(0.92);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
