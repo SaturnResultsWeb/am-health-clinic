@@ -41,7 +41,7 @@ export function HeroBackdrop() {
     <div ref={wrap} className="absolute inset-0 -z-20 overflow-hidden">
       <img
         ref={img}
-        src="https://picsum.photos/seed/amclinichero/1920/1280"
+        src="/hero-image.jpg"
         alt=""
         aria-hidden
         fetchPriority="high"
